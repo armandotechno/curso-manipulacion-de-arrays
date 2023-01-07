@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 1</title>
+</head>
+<body>
+    <div id="tarea"></div>
+    <script>
+        const tareas = [
+            { name: 'Sacar la basura', status: 'Incompleta' },
+            { name: 'Estudiar', status: 'Completa' },
+            { name: 'Fregar', status: 'Completa' },
+        ]
+        const tarea = document.getElementById('tarea')
+        tareas.forEach( tar => {
+            tarea.innerHTML += `<input
+                type="checkbox"
+                id="${tar.name}"
+                name="${tar.name}"
+                ${tar.status === 'Completa' && 'checked'}
+                <label for='${tar.name}'>${tar.name}</label>
+            />`
+        })
+    </script>
+</body>
+</html>
